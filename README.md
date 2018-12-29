@@ -17,3 +17,4 @@ Image style transfer service using trained model from torch, powered by **Ridicu
 ##Run From Docker Image
 
 `docker run -p [port]:5000 neural-style-transfer`
+`docker run -d -p [port]:5000 neural-style-transfer`
