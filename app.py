@@ -1,40 +1,14 @@
-import os, cv2, imutils, urllib, numpy, time, flask, markdown
+import os, cv2, imutils, urllib, numpy, time, flask
 
 flask_app = flask.Flask(__name__)
 
+"""
+url parameters are as follow:
+- model: path of torch model to be applied
+- type: image type, jpg(default) or png
+- image: path of image, encoded
+"""
 @flask_app.route('/')
-def root():
-    markdown_content = """
-# NeuralStyleTransfer
-Image style transfer service using trained model from torch, powered by **RidiculousEagle** Studio.
-## /style_transfer
-```html
-model: the path of trained torch model, available models are:
-    + eccv16
-        - composition_vii
-        - la_muse
-        - starry_night
-        - the_wave
-    + instance_norm
-        - candy
-        - feathers
-        - la_muse
-        - mosaic
-        - starry_night
-        - the_scream
-        - udnie
-image: encoded URL of the image path
-type: response type (jpg as default, png), optional
-```
-    """
-    markdown_content = flask.Markup(markdown.markdown(markdown_content, extensions=['fenced_code']))
-    return markdown_content
-    
-# url parameters are as follow:
-# - model: path of torch model to be applied
-# - type: image type, jpg(default) or png
-# - image: path of image, encoded
-@flask_app.route('/style_transfer')
 def style_transfer():
     try:
         image_url = urllib.parse.unquote(flask.request.args.get('image'))

@@ -35,6 +35,6 @@ docker run -d -p [port]:5000 neural-style-transfer
 ## Example
 
 ```http
-GET http://[host]:[port]/style_transfer?model=eccv16/starry_night&image=https%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fthumb%2fb%2fb9%2fSaffron_finch_%2528Sicalis_flaveola%2529_male.JPG%2f1200px-Saffron_finch_%2528Sicalis_flaveola%2529_male.JPG
+GET http://[host]:[port]/?model=eccv16/starry_night&image=https%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fthumb%2fb%2fb9%2fSaffron_finch_%2528Sicalis_flaveola%2529_male.JPG%2f1200px-Saffron_finch_%2528Sicalis_flaveola%2529_male.JPG
 ```
 
