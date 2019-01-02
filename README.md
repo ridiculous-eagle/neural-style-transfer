@@ -13,17 +13,17 @@ Image style transfer service using trained model from torch, powered by **Ridicu
 ## Build Docker Image
 
 ```bash
-docker build -t neural-style-transfer
+docker build -t ridiculous-eagle/neural-style-transfer
 ```
 
 ## Run From Docker Image
 
 ```bash
-docker run -p [port]:5000 neural-style-transfer
+docker run -p [port]:5000 ridiculous-eagle/neural-style-transfer
 ```
 
 ```bash
-docker run -d -p [port]:5000 neural-style-transfer
+docker run -d -p [port]:5000 ridiculous-eagle/neural-style-transfer
 ```
 
 ## Parameters
