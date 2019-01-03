@@ -4,8 +4,7 @@ build:
    - docker:dind
    stage: build
    script:
-     - echo $CI_COMMIT_SHORT_SHA
-     - echo ${$CI_BUILD_REF:0:8}
+     - echo ${CI_BUILD_REF::8}
     # - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
     # - docker build -t registry.gitlab.com/ridiculous-eagle/neural-style-transfer:$CI_BUILD_REF .
     # - docker push registry.gitlab.com/ridiculous-eagle/neural-style-transfer:$CI_BUILD_REF
