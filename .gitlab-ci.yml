@@ -11,7 +11,8 @@ build:
   stage: build
 
   script:
-     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-     - docker build -t $CONTAINER_IMAGE:$CI_JOB_ID -t $CONTAINER_IMAGE .
-     - docker push $CONTAINER_IMAGE:$CI_JOB_ID
-     - docker push $CONTAINER_IMAGE
+     - echo $CI_REGISTRY_IMAGE
+    # - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    # - docker build -t $CONTAINER_IMAGE:$CI_JOB_ID -t $CONTAINER_IMAGE .
+    # - docker push $CONTAINER_IMAGE:$CI_JOB_ID
+    # - docker push $CONTAINER_IMAGE
