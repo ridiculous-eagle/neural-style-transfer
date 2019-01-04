@@ -9,5 +9,6 @@ RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 5000
 
 ENV NAME NeuralStyleTransfer
+ENV PYTHONUNBUFFERED 1
 
-CMD [ "python3", "server.py"]
+CMD [ "python3", "-u", "server.py"]
