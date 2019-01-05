@@ -6,7 +6,7 @@ COPY . /app
 
 RUN pip3 install --trusted-host pypi.python.org -r requirements.txt
 
-EXPOSE 5000
+EXPOSE 21050
 
 ENV NAME NeuralStyleTransfer
 ENV PYTHONUNBUFFERED 1
