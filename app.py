@@ -84,9 +84,11 @@ def do():
     try:
         image_url = urllib.parse.unquote(flask.request.args.get('image'))
         model_path = f'models/{urllib.parse.unquote(flask.request.args.get("model"))}.t7'
-        canvas_url = urllib.parse.unquote(flask.request.args.get('canvas'))
+        canvas_url = flask.request.args.get('canvas')
         if canvas_url is None:
             canvas_url = 'backgrounds/white.jpg'
+        else:
+            canvas_url = urllib.parse.unquote(canvas_url)
         canvas_width = flask.request.args.get('width')
         try:
             canvas_width = int(canvas_width)
