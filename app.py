@@ -7,6 +7,7 @@ import logging
 import traceback
 import image_proc
 
+
 logger = logging.getLogger(__name__)
 flask_app = flask.Flask(__name__)
 

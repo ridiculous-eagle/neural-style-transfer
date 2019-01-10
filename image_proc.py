@@ -1,7 +1,7 @@
 import cv2
+import imutils
 import numpy
 import time
-import urllib
 import ssl
 import logging
 import os
@@ -26,9 +26,7 @@ def get_image(uri):
     if os.path.exists(uri):
         return cv2.imread(uri, cv2.IMREAD_UNCHANGED)
     else:
-        with urllib.request.urlopen(uri, timeout = 10000) as stream:
-            image = numpy.asarray(bytearray(stream.read()), dtype=numpy.uint8)
-        return cv2.imdecode(image, cv2.IMREAD_UNCHANGED)
+        return imutils.url_to_image(uri, cv2.IMREAD_UNCHANGED)
 
 
 def crop(image, offset = 10):
@@ -81,6 +79,7 @@ def overlay_images(back, fore, x, y):
     ----------
     None
     """
+    fore = cv2.cvtColor(fore, cv2.COLOR_BGR2BGRA)
     rows, cols, channels = fore.shape    
     trans_indices = fore[...,3] != 0 # Where not transparent
     overlay_copy = back[y:y+rows, x:x+cols] 

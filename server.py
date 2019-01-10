@@ -1,10 +1,10 @@
 from gevent import pywsgi
-import gevent, app, logging.config, os, json
+import gevent, app, os
+import logging
+import log_config
 
 
-with open("logging.cfg", "r") as stream:
-    logging_config = json.load(stream)
-logging.config.dictConfig(logging_config)
+log_config.load_settings()
 logger = logging.getLogger(__name__)
 try:
     logger.info("Start Serving at 21050")
