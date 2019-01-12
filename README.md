@@ -1,6 +1,6 @@
 # NeuralStyleTransfer
 
-Image style transfer service using trained model from torch, powered by **RidiculousEagle** Studio.
+Image style transfer service using trained torch models. Powered by **RidiculousEagle** Studio.
 
 ## Requirements
 
